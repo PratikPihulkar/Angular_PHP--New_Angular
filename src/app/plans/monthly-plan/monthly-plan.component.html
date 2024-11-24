@@ -1,0 +1,28 @@
+
+<div class="mdiv ">
+    <div class="insideMdiv color-change-2x" >
+        <div class=" d-flex flex-wrap justify-content-evenly  aboveBOX">
+           
+            <div class="p-2 bd-highlight col-12 col-md-6 col-lg-4  inBOX" *ngFor="let plan of plans">
+                <div class="d-flex flex-column imgDiv">
+                    <h3 style="color:yellow" >
+                        <!-- <i class="bi bi-star-fill"></i> -->
+            
+                        <i class="bi bi-suit-heart-fill"></i>
+                    </h3>
+                </div>
+                <h3 class="h22">{{ plan.name }}</h3>
+                <h2 class="h22 h66"> ₹ {{ plan.amount }}</h2> 
+                <hr> 
+                <h6 class="h22 " style="color: rgb(78, 79, 77); min-height: 9rem;">{{ plan.description }}</h6>
+               
+                
+                <h6>Active membership for {{plan.validity}} month</h6>
+                <button class="btn btn-outline-secondary getBtn mt-auto" style="margin-bottom:1rem ;">Get Plan</button>
+            </div>
+
+        </div>
+
+
+        </div>
+    </div>

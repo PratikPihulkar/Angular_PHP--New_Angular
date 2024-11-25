@@ -21,11 +21,10 @@
     border-radius: 25px;
     display: flex; 
     flex-direction: column; 
-    justify-content: space-between; 
+    
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background:  rgb(248, 239, 239);
     overflow: hidden;
-
    
 }
 .inBOX{
@@ -50,15 +49,18 @@
 
 
 
-h6 {
-    text-align: justify; /* Justify the text */
-    overflow: hidden; /* Hide overflow text */
-    display: -webkit-box; /* Enables the line-clamp feature */
-    -webkit-line-clamp: 5;
-    line-clamp: 5; 
-    -webkit-box-orient: vertical; /* Specifies the box orientation */
-    word-wrap: break-word; /* Break long words to avoid overflow */
-    margin: 1rem 0; 
+.bullets{
+  
+    position: relative;
+    height:4rem;
+    background-color: antiquewhite;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 10px;
+}
+.bull{
+  margin: 5px; 
+  
 }
 
 
@@ -92,8 +94,8 @@ h6 {
 .getBtn{
     height: 3.5rem;
     border-radius: 30px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
+   
     background: radial-gradient(circle at 0.1% 53.8%, rgb(255, 182, 172) 0%, rgb(255, 123, 172) 100.2%);
   }
 

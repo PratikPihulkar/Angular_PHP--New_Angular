@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, input } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { DataStoreServiceService } from '../Services/data-store-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 declare var bootstrap: any;
 
@@ -12,25 +13,22 @@ declare var bootstrap: any;
 
 export class PlansComponent{
 
-  
-  constructor(private dataStore :DataStoreServiceService){
-
-
+  constructor(private dataStore :DataStoreServiceService,){
+    
   }
-  plans:any
 
-  parentPlans:any
+
+  plans:any
 
   ngOnInit(): void {
     this.dataStore.getAllPlans().subscribe((res: any) => {
-      // this.plans = res.data; 
-      // this.parentPlans=res.data;
-      console.log(res.data); 
+      this.plans = res.data; 
+      console.log(this.plans); 
     });
-  
-    console.log("jay shri ram"); 
   }
   
   isToggled: boolean = false; toggle() { this.isToggled = !this.isToggled; }
   
+
+
 }

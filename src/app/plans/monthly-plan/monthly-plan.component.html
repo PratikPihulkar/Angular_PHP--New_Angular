@@ -12,13 +12,17 @@
                     </h3>
                 </div>
                 <h3 class="h22">{{ plan.name }}</h3>
-                <h2 class="h22 h66"> ₹ {{ plan.amount }}</h2> 
+                <h2 class="h22 h66"> ₹ {{ getMonthlyAmount(plan.amount)}}</h2> 
                 <hr> 
-                <h6 class="h22 " style="color: rgb(78, 79, 77); min-height: 9rem;">{{ plan.description }}</h6>
-               
                 
-                <h6>Active membership for {{plan.validity}} month</h6>
-                <button class="btn btn-outline-secondary getBtn mt-auto" style="margin-bottom:1rem ;">Get Plan</button>
+                <div class="bullets"  style="color: rgb(77, 79, 79);" *ngFor="let item of arr" >
+                    
+                    <h6 class="bull"><i class="bi bi-dot"></i>  {{item}}</h6>
+                    
+                </div>
+                
+                <button class="btn btn-outline-secondary getBtn" style="margin-bottom:1rem ;" (click)="selectedPlan(plan.plan_id)">Get Plan</button>
+            
             </div>
 
         </div>

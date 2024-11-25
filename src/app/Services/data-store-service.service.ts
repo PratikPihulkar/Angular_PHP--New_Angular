@@ -41,6 +41,10 @@ export class DataStoreServiceService {
   getAllPlans():Observable<any>{
     return this.http.get('http://localhost:8000/all-plans');
   }
+  getPlanById(id:any):Observable<any>{
+    return this.http.get('http://localhost:8000/get_plans_by_id'+id);
+  }
+  
 
 
 

@@ -1,5 +1,6 @@
-import { Component, Input,  } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataStoreServiceService } from '../../Services/data-store-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-monthly-plan',
@@ -8,19 +9,39 @@ import { DataStoreServiceService } from '../../Services/data-store-service.servi
 })
 export class MonthlyPlanComponent {
 
-  constructor(private dataStore :DataStoreServiceService){
+  constructor(private dataStore :DataStoreServiceService, private router: Router){
 
   }
 
-  @Input() plansFromParent: any;
+  arr:any[]=["Basic features to get started",
+    "Limited storage capacity",
+    "Email support included",
+    "Free basic integrations",
+    "Access to a knowledge base",
+    "Ideal for small-scale projects",
+    "Easy setup and onboarding",
+    "Access to community forums",
+    "Regular updates and patches"];
+
 
   plans:any
 
   ngOnInit(): void {
- 
-    console.log("jay shri ram",this.plansFromParent); 
-    this.plans=this.plansFromParent
-
-}
-  }
+    this.dataStore.getAllPlans().subscribe((res: any) => {
+      this.plans = res.data; 
+      console.log(this.plans); 
+    });
   
+    console.log("jay shri ram"); 
+  }
+
+  getMonthlyAmount(amount: string): number {
+    const parsedAmount = JSON.parse(amount);
+    return parsedAmount.monthly;
+  }
+
+  selectedPlan(planId: any) {
+    console.log(planId);
+    this.router.navigate(['/payment/'+planId]);
+  }
+}

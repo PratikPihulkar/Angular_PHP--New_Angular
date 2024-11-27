@@ -3,3 +3,7 @@ html, body { height: 100%; width:100vw; }
 body::-webkit-scrollbar {
     display: none;
 }
+
+.mdiv{
+    /* background-color: blue; */
+}

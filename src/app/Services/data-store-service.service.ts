@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class DataStoreServiceService {
+ 
 
   constructor(private http:HttpClient, private route:Router) {}
 
@@ -41,8 +42,9 @@ export class DataStoreServiceService {
   getAllPlans():Observable<any>{
     return this.http.get('http://localhost:8000/all-plans');
   }
+
   getPlanById(id:any):Observable<any>{
-    return this.http.get('http://localhost:8000/get_plans_by_id'+id);
+    return this.http.get('http://localhost:8000/get-plan-by-id/'+id);
   }
   
 
@@ -98,7 +100,10 @@ globleId:any=null
   // }
 
 
-  
+  updateData(jsonObject: { plan_id: any; name: any; amount: { value: any; }; validity: string; payment_type: string; payment_option_details: any; }) {
+    console.log("FROM SERVICE")
+    console.log(jsonObject)
+  }
 
 
 
